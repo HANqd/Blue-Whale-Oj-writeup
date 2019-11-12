@@ -65,7 +65,7 @@ unsigned __int64 sub_91C()
 输入</br>
 2AAAAAAAA,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx</br>
 输出</br>
-AAAAAAAA,7fffffffb1d0,7ffff7dd3780,7ffff7b042c0,7ffff7fda700,c,32007ffff7fdb000,1,4141414141414141,786c252c786c252c,786c252c78</br>6c252c,786c252c786c252c,786c252c786c252c,786c252c786c252c,786c252c786c252c</br>
+AAAAAAAA,7fffffffb1d0,7ffff7dd3780,7ffff7b042c0,7ffff7fda700,c,32007ffff7fdb000,1,4141414141414141,786c252c786c252c,786c252c786c252c,786c252c786c252c,786c252c786c252c,786c252c786c252c,786c252c786c252c</br>
 查看栈中的内容：</br>
 --More--(150/200)</br>
 1200| 0x7fffffffdd10 --> 0x19 </br>
